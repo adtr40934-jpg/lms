@@ -1,0 +1,30 @@
+
+/* Input Focus Styles */
+.field input:focus, .field textarea:focus {
+    border: 2px solid var(--primary) !important;
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.15); /* light red glow */
+    outline: none;
+}
+.field input, .field textarea {
+    border: 1px solid var(--gray-200);
+    background-color: #f9fafb; /* Light clean background */
+    transition: all 0.2s ease;
+}
+.input-icon input:focus + i {
+    color: var(--primary);
+}
+/* Error Validation Styles */
+.error-text {
+    color: #b91c1c; /* Elegant dark red */
+    font-size: 13px;
+    margin-top: 6px;
+    display: block;
+}
+.field input.invalid, .field textarea.invalid, .upload-box.invalid {
+    border-color: #b91c1c !important;
+    background-color: #fef2f2 !important; /* Light red background for invalid */
+    box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.15) !important;
+}
+.input-icon input.invalid + i {
+    color: #b91c1c;
+}

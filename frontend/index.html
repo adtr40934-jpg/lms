@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ar" dir="rtl" class="js">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>منصة محمد بهاء التعليمية - بتاع تسويق</title>
+    <meta name="description" content="منصة محمد بهاء التعليمية - المنصة الرائدة في دورات التسويق الرقمي، إعلانات ميتا (فيسبوك وإنستجرام)، وصناعة المحتوى الرقمي بإشراف المدرب محمد بهاء." />
+    <meta name="author" content="محمد بهاء" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:site_name" content="منصة محمد بهاء التعليمية" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="منصة محمد بهاء التعليمية - بتاع تسويق" />
+    <meta property="og:description" content="كورسات عملية باللغة العربية في التسويق الإلكتروني، إعلانات ميتا، وصناعة المحتوى بإشراف المدرب محمد بهاء." />
+    <meta property="og:image" content="/assets/img/og-preview.jpg" />
+    <meta property="og:locale" content="ar_AR" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="منصة محمد بهاء التعليمية - بتاع تسويق" />
+    <meta name="twitter:description" content="كورسات عملية باللغة العربية في التسويق الإلكتروني، إعلانات ميتا، وصناعة المحتوى بإشراف المدرب محمد بهاء." />
+    <meta name="twitter:image" content="/assets/img/og-preview.jpg" />
+    
+    <link rel="preload" href="/assets/fonts/cairo/cairo-arabic-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css?v=4">
+    <link rel="stylesheet" href="/assets/css/input-frame.css">
+
+    <style>
+      #global-loader {
+        position: fixed;
+        inset: 0;
+        background: #0b0f19;
+        z-index: 999999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+      }
+      .loader-icon {
+        font-size: 44px;
+        margin-bottom: 20px;
+        color: #c81e1e;
+        animation: pulse 1.6s infinite ease-in-out;
+      }
+      .loader-text {
+        font-family: 'Cairo', sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+      }
+      .loader-progress {
+        width: 160px;
+        height: 4px;
+        background: rgba(255,255,255,0.08);
+        border-radius: 6px;
+        margin-top: 20px;
+        overflow: hidden;
+        position: relative;
+      }
+      .loader-progress-bar {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, #ff4d4d, #c81e1e);
+        border-radius: 6px;
+        animation: sweepBar 1.4s infinite ease-in-out;
+      }
+      @keyframes sweepBar {
+        0% { right: -20%; width: 20%; }
+        50% { right: 25%; width: 55%; }
+        100% { right: 100%; width: 20%; }
+      }
+      @keyframes pulse {
+        0% { transform: scale(0.92); opacity: 0.75; }
+        50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 8px 18px rgba(200,30,30,0.6)); }
+        100% { transform: scale(0.92); opacity: 0.75; }
+      }
+      body.loaded #global-loader {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="global-loader">
+      <div class="loader-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+      <div class="loader-text" id="loader-text-el">منصة التعلم الإلكتروني</div>
+      <div class="loader-progress"><div class="loader-progress-bar"></div></div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      const cachedSiteName = localStorage.getItem('site_name');
+      if (cachedSiteName) {
+        const loaderTextEl = document.getElementById('loader-text-el');
+        if (loaderTextEl) loaderTextEl.textContent = cachedSiteName;
+        document.title = cachedSiteName;
+      }
+
+      window.hideGlobalLoader = () => {
+        document.body.classList.add('loaded');
+      };
+      window.showGlobalLoader = () => {
+        document.body.classList.remove('loaded');
+      };
+
+      // Long safety fallback (10s) in case server is unreachable
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          if (!document.body.classList.contains('loaded')) {
+            window.hideGlobalLoader();
+          }
+        }, 10000);
+      });
+    </script>
+  </body>
+</html>

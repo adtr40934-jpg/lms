@@ -1,0 +1,41 @@
+# Robots.txt for منصة محمد بهاء التعليمية
+# https://mohamedbahaa.com
+
+User-agent: *
+Allow: /
+Allow: /courses
+Allow: /course/
+Allow: /about
+Allow: /contact
+Allow: /subscribe
+Disallow: /account/
+Disallow: /checkout
+Disallow: /login
+Disallow: /register
+Disallow: /verify-otp
+Disallow: /verify-certificate/
+Disallow: /api/
+
+# AI Search Engine Crawlers
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /account/
+Disallow: /checkout
+
+User-agent: GPTBot
+Allow: /
+Disallow: /account/
+Disallow: /checkout
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /account/
+Disallow: /checkout
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /account/
+Disallow: /checkout
+
+# Sitemap declaration
+Sitemap: /sitemap.xml
